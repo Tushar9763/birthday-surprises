@@ -362,6 +362,16 @@ musicToggle.addEventListener('click', ()=>{
     playing = false;
   }
 });
+let musicStarted = false;
+function startMusicOnce(){
+  if(musicStarted) return;
+  bgMusic.play().then(()=>{
+    musicToggle.textContent = '🔊 Music';
+    playing = true;
+    musicStarted = true;
+  }).catch(()=>{});
+}
+document.addEventListener('click', startMusicOnce, { once: true });
 
 function showGiftMessage(msg){
   const overlay = document.createElement('div');
