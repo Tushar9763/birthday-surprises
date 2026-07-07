@@ -130,10 +130,24 @@
   }
   #screenFinal .card{
     position:relative; z-index:2; max-width: 480px;
-    background: rgba(74,16,36,.55); border: 1px solid rgba(255,255,255,.2);
+    background: none;
+    border: 1px solid rgba(255,255,255,.2);
+    overflow:hidden;
   }
-  #screenFinal h2{ font-family:'Caveat',cursive; font-size: 2.8rem; color: var(--gold); margin:0 0 14px; }
-  #screenFinal p{ line-height:1.7; font-size:1.05rem; }
+  #screenFinal .card::before{
+    content:'';
+    position:absolute; inset:0;
+    background: url('images/4.jpeg') center/cover no-repeat;
+    z-index:-1;
+  }
+  #screenFinal h2{
+    font-family:'Caveat',cursive; font-size: 2.8rem; color: var(--gold); margin:0 0 14px;
+    text-shadow: 0 2px 10px rgba(0,0,0,.6);
+  }
+  #screenFinal p{
+    line-height:1.7; font-size:1.05rem;
+    text-shadow: 0 1px 6px rgba(0,0,0,.55);
+  }
 
   /* confetti */
   #confettiCanvas{ position:fixed; inset:0; pointer-events:none; z-index:30; }
@@ -255,7 +269,6 @@
     <img src="images/9.jpeg" alt="">
   </div>
   <div class="card">
-    <div class="heart-frame">🎂</div>
     <h2>Happy Birthday Rajnandani!</h2>
     <p>Wishing you a very happy birthday, bro! 🥳 In my whole life, you are my first close female friend.Thank you for everything you do for me.Stay healthy, eat well, and don’t get sick every time 😄 And always stay energetic!
 .</p>
