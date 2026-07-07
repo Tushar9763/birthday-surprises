@@ -115,7 +115,24 @@
   .progress{ margin-top: 30px; font-size:.9rem; color: rgba(253,243,231,.7); }
 
   /* ---------------- SCREEN 3: final message ---------------- */
-  #screenFinal .card{ max-width: 480px; }
+  #screenFinal{ position:fixed; overflow:hidden; }
+  #screenFinal .collage-bg{
+    position:absolute; inset:0; z-index:0;
+    display:grid; grid-template-columns: repeat(3,1fr); grid-template-rows: repeat(3,1fr);
+    gap:2px;
+  }
+  #screenFinal .collage-bg img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter: brightness(.55) saturate(1.15);
+  }
+  #screenFinal .collage-bg::after{
+    content:''; position:absolute; inset:0;
+    background: radial-gradient(circle at 50% 45%, rgba(74,16,36,.55) 0%, rgba(74,16,36,.88) 100%);
+  }
+  #screenFinal .card{
+    position:relative; z-index:2; max-width: 480px;
+    background: rgba(74,16,36,.55); border: 1px solid rgba(255,255,255,.2);
+  }
   #screenFinal h2{ font-family:'Caveat',cursive; font-size: 2.8rem; color: var(--gold); margin:0 0 14px; }
   #screenFinal p{ line-height:1.7; font-size:1.05rem; }
 
@@ -227,6 +244,17 @@
 
 <!-- SCREEN 3: FINAL MESSAGE -->
 <div class="screen hidden" id="screenFinal">
+  <div class="collage-bg">
+    <img src="images/photo1.png" alt="">
+    <img src="images/photo6.png" alt="">
+    <img src="images/way.jpeg" alt="">
+    <img src="images/photo0.jpeg" alt="">
+    <img src="images/photo1.png" alt="">
+    <img src="images/photo6.png" alt="">
+    <img src="images/way.jpeg" alt="">
+    <img src="images/photo0.jpeg" alt="">
+    <img src="images/photo1.png" alt="">
+  </div>
   <div class="card">
     <div class="heart-frame">🎂</div>
     <h2>Happy Birthday Rajnandani!</h2>
